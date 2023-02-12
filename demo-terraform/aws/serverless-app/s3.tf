@@ -11,10 +11,7 @@ resource "random_string" "uniq" {
 resource "aws_s3_bucket" "website" {
     bucket = "${var.resource_ride}-${random_string.uniq.result}"
     tags = local.project_tags
-      versioning {
-        "enabled": true,
-        "mfa_delete": true
-    }
+     
 }
 
 ## Encrypt-Bucket (Disables for public objects)
