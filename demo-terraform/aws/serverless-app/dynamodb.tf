@@ -15,6 +15,11 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     }
 
     tags = local.project_tags
+    
+     server_side_encryption {
+    enabled = true
+  }
+    
 }
 
 ### DynDB data handling IAM policy
